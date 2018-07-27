@@ -73,11 +73,28 @@
 			<Add option="-Wextra" />
 			<Add option="-Wall" />
 			<Add option="-std=c99" />
+			<Add directory="." />
+			<Add directory="headers" />
+			<Add directory="ipc-buffer" />
+			<Add directory="shm" />
+			<Add directory="socket" />
+			<Add directory="spinlock" />
+			<Add directory="threads" />
 		</Compiler>
+		<Unit filename="headers/csc_ipcbuf.h" />
+		<Unit filename="headers/csc_shm.h" />
+		<Unit filename="headers/csc_socket.h" />
+		<Unit filename="headers/csc_spinlock.h" />
+		<Unit filename="headers/csc_threads.h" />
+		<Unit filename="ipc-buffer/csc_ipcbuf_p.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="main.h" />
+		<Unit filename="shm/csc_shm_p.h" />
+		<Unit filename="socket/csc_socket_p.h" />
+		<Unit filename="spinlock/csc_spinlock_p.h" />
+		<Unit filename="threads/csc_threads_p.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
