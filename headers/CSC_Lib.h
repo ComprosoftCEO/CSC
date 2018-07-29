@@ -5,7 +5,13 @@
 #ifndef CSC_LIB_HEADER
 #define CSC_LIB_HEADER
 
+typedef void* pCSC_Lib_t;
 
+#include <stdbool.h>
 
+pCSC_Lib_t CSC_Load_Library(const char* lib);
+bool CSC_Unload_Library(pCSC_Lib_t lib);
+
+void* CSC_Get_Function(pCSC_Lib_t lib, const char* fun);
 
 #endif // CSC_LIB_HEADER Included

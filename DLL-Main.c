@@ -1,15 +1,14 @@
-#include "main.h"
+// C System Calls (CSC)
+// (C) Comprosoft 2018 - All Rights Reserved
+//
+//  DLL-Main.c - Startup functions for Windows DLL
+#include <dll.h>
 
-// a sample exported function
-void DLL_EXPORT SomeFunction(const LPCSTR sometext)
-{
-    MessageBoxA(0, sometext, "DLL Message", MB_OK | MB_ICONINFORMATION);
-}
+#if defined(_WINDOWS)
+  #include <windows.h>
 
-DLL_EXPORT BOOL APIENTRY DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
-{
-    switch (fdwReason)
-    {
+  DLL_EXPORT BOOL APIENTRY DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved) {
+    switch (fdwReason) {
         case DLL_PROCESS_ATTACH:
             // attach to process
             // return FALSE to fail DLL load
@@ -28,4 +27,6 @@ DLL_EXPORT BOOL APIENTRY DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpv
             break;
     }
     return TRUE; // succesful
-}
+  }
+
+#endif
