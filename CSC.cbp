@@ -80,18 +80,20 @@
 			<Add directory="." />
 			<Add directory="headers" />
 			<Add directory="ipc-buffer" />
+			<Add directory="lib" />
 			<Add directory="shm" />
 			<Add directory="socket" />
 			<Add directory="spinlock" />
 			<Add directory="threads" />
+			<Add directory="tls" />
 		</Compiler>
-		<Unit filename="headers/csc_ipcbuf.h" />
-		<Unit filename="headers/csc_lib.h" />
-		<Unit filename="headers/csc_shm.h" />
-		<Unit filename="headers/csc_socket.h" />
-		<Unit filename="headers/csc_spinlock.h" />
-		<Unit filename="headers/csc_threads.h" />
-		<Unit filename="headers/csc_tls.h" />
+		<Unit filename="headers/CSC_IPCBuf.h" />
+		<Unit filename="headers/CSC_Lib.h" />
+		<Unit filename="headers/CSC_Shm.h" />
+		<Unit filename="headers/CSC_Socket.h" />
+		<Unit filename="headers/CSC_SpinLock.h" />
+		<Unit filename="headers/CSC_TLS.h" />
+		<Unit filename="headers/CSC_Threads.h" />
 		<Unit filename="ipc-buffer/csc_ipcbuf_p.h" />
 		<Unit filename="lib/csc_lib_p.h" />
 		<Unit filename="main.c">
@@ -102,6 +104,18 @@
 		<Unit filename="socket/csc_socket_p.h" />
 		<Unit filename="spinlock/csc_spinlock_p.h" />
 		<Unit filename="threads/csc_threads_p.h" />
+		<Unit filename="tls/CSC_Free_TLS.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="tls/CSC_Get_TLS.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="tls/CSC_New_TLS.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="tls/CSC_Set_TLS.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="tls/csc_tls_p.h" />
 		<Extensions>
 			<code_completion />
