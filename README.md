@@ -12,10 +12,38 @@ Cross-Platform Operating System Calls (for C)
 <br>
 
 ## Modules:
-* __Shm__ _(csc_shm.h)_ - Shared memory (for Windows, you need to install the shared memory service)
-* __Socket__ _(csc_socket.h)_ - Socket calls
-* __IPC Buffer__ _(csc_ipcbuf.h)_ - Use a shared memory buffer to pass data between two processes
-* __Lib__ _(csc_lib.h)_ - Dynamically load and unload shared libraries
-* __Spinlock__ _(csc_spinlock.h)_ - Atomic spinlocks for multithreaded applications
-* __Threads__ _(csc_threads.h)_ - Create new threads in an application
-* __TLS__ _(csc_tls.h)_ - Thread-Local Storage
+* __Shm__ _(CSC_Shm.h)_ - Shared memory (for Windows, you need to install the shared memory service)
+* __Socket__ _(CSC_Socket.h)_ - Socket calls
+* __IPC Buffer__ _(CSC_IPCBuf.h)_ - Use a shared memory buffer to pass data between two processes
+* __Lib__ _(CSC_Lib.h)_ - Dynamically load and unload shared libraries
+* __Spinlock__ _(CSC_SpinLock.h)_ - Atomic spinlocks for multithreaded applications
+* __Threads__ _(CSC_Threads.h)_ - Create new threads in an application
+* __[TLS](#thread-local-storage)__ _(CSC_TLS.h)_ - Thread-Local Storage
+
+<br>
+
+## Thread-Local Storage
+
+Create a new TLS object:
+```c
+#include <CSC_TLS.h>
+pCSC_TLS_t tls = CSC_New_TLS(); /* Returns NULL on failure */
+```
+<br>
+
+Store data in TLS object:
+```c
+CSC_Set_TLS(tls,(void*) data);  /* Returns false on failure */
+```
+<br>
+
+Retrieve data from the TLS object:
+```c
+void* data = CSC_Get_TLS(tls);  /* Returns NULL on failure */
+```
+<br>
+
+Release the TLS object from memory:
+```c
+CSC_Free_TLS(tls);  /* Returns false on failure */
+```
